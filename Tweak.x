@@ -1,27 +1,31 @@
 #include <spawn.h>
 #include <signal.h>
 
+#define gearBundle @"/Library/PreferenceBundles/Gear.bundle"
+#define localizedString(string) [[NSBundle bundleWithPath:gearBundle] localizedStringForKey:string value:@"" table:nil]
+
+
 @interface PSUIPrefsListController : UIViewController
 @end
 
 %hook PSUIPrefsListController
 - (void)viewDidLoad{
 	%orig;
-	UIBarButtonItem *restartSpringBoard = [[UIBarButtonItem alloc] initWithTitle:@"Restart SpringBoard" style:UIBarButtonItemStylePlain target:self action:@selector(restartSpringBoardButtonClicked:)];
+	UIBarButtonItem *restartSpringBoard = [[UIBarButtonItem alloc] initWithTitle:localizedString(@"NAVIGATION_ITEM_TITLE") style:UIBarButtonItemStylePlain target:self action:@selector(restartSpringBoardButtonClicked:)];
 	self.navigationItem.rightBarButtonItem = restartSpringBoard;
 }
 
 %new
 - (void)restartSpringBoardButtonClicked:(id)sender{
      UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Settings"
-                                 message:@"Are you sure you want to restart SpringBoard?"
+                                 alertControllerWithTitle:localizedString(@"ALERT_TITLE")
+                                 message:localizedString(@"ALERT_MESSAGE")
                                  preferredStyle:UIAlertControllerStyleAlert];
 
     //Add Buttons
 
     UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:@"Yes"
+                                actionWithTitle:localizedString(@"ALERT_YES")
                                 style:UIAlertActionStyleDestructive
                                 handler:^(UIAlertAction * action) {
 									pid_t pid;
@@ -32,7 +36,7 @@
                                 }];
 
     UIAlertAction* noButton = [UIAlertAction
-                               actionWithTitle:@"Cancel"
+                               actionWithTitle:localizedString(@"ALERT_CANCEL")
                                style:UIAlertActionStyleCancel
                                handler:^(UIAlertAction * action) {
 

@@ -1,0 +1,7 @@
+{
+    NAVIGATION_ITEM_TITLE = "Reiniciar SpringBoard";
+    ALERT_TITLE = "Configuración";
+    ALERT_MESSAGE = "¿Seguro que quieres reiniciar SpringBoard?";
+    ALERT_YES = "Sí";
+    ALERT_CANCEL = "Cancelar";
+}
