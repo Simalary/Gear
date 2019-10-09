@@ -1,0 +1,9 @@
+Package: com.simalary.gear
+Name: Gear
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Add a sbreload button to Settings.
+Maintainer: Simalary (Chris) <19harperc@gmail.com>
+Author: Simalary (Chris) <19harperc@gmail.com>
+Section: Tweaks
