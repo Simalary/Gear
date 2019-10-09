@@ -9,7 +9,6 @@
 	%orig;
 	UIBarButtonItem *restartSpringBoard = [[UIBarButtonItem alloc] initWithTitle:@"Restart SpringBoard" style:UIBarButtonItemStylePlain target:self action:@selector(restartSpringBoardButtonClicked:)];
 	self.navigationItem.rightBarButtonItem = restartSpringBoard;
-	[restartSpringBoard release];
 }
 
 %new

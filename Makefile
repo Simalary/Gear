@@ -2,6 +2,8 @@ INSTALL_TARGET_PROCESSES = SpringBoard
 
 include $(THEOS)/makefiles/common.mk
 
+ARCHS = arm64 arm64e
+
 TWEAK_NAME = Gear
 
 Gear_FILES = Tweak.x
