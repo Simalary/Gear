@@ -1,7 +1,7 @@
 #include <spawn.h>
 #include <signal.h>
 
-#define gearBundle @"/Library/PreferenceBundles/Gear.bundle"
+#define gearBundle @"/Library/PreferenceBundles/Gear"
 #define localizedString(string) [[NSBundle bundleWithPath:gearBundle] localizedStringForKey:string value:@"" table:nil]
 
 
